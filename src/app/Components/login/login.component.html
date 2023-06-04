@@ -1,0 +1,46 @@
+<form class="border p-3 rounded-3" [formGroup]="loginForm" (ngSubmit)="loginSubmitted()">
+    
+    <div class="row">
+        <div class="col text-center p-2 mb-3 bg-light">
+            <span class="fs-3">Login</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col mb-3">
+            <label for="mobile" class="form-label fw-bold">Mobile Number</label>
+            <input type="text" class="form-control" id="mobile" formControlName="mobile">
+            <div class="form-text text-danger" *ngIf="MobileNo.errors?.['required'] && MobileNo.touched">Mobile No. is Required</div>
+            
+            <div class="form-text text-danger" *ngIf="MobileNo.errors?.['pattern'] && (MobileNo.dirty || MobileNo.touched)">Mobile No. is Invalid</div>
+
+            <div class="form-text text-danger" *ngIf="MobileNo.errors?.['minlength'] || MobileNo.errors?.['maxlength'] && (MobileNo.touched || MobileNo.dirty)">Mobile No. should be 10 digit</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col mb-3">
+            <label for="password" class="form-label fw-bold">Password</label>
+            <input type="password" class="form-control" id="password" formControlName="password">
+
+            <div class="form-text text-danger" *ngIf="Password.errors?.['required'] && Password.touched">Password is Required</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col mb-3">
+            <div class="d-grid">
+                <button type="reset" class="btn btn-danger">Reset</button>
+            </div>
+        </div>
+        <div class="col mb-3">
+            <div class="d-grid">
+                <button type="submit" class="btn btn-success" [disabled]="loginForm.invalid">Submit</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col mb-6">
+            <div class="d-grid">
+                <button type="reset" class="btn btn-primary" routerLink="/user-entry">New User Registration</button>
+            </div>
+        </div>
+    </div>
+</form>
