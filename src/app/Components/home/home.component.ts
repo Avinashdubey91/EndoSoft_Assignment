@@ -34,8 +34,6 @@ export class HomeComponent implements OnInit{
   userInfo() {
       this.authService.getUserList().subscribe(data => {
         this.userList = data;
-        // swal.fire(Object.entries(this.userList));
-        //alert(data);
       });
   }
 
