@@ -9,7 +9,8 @@
                 <th>Last Name</th>  
                 <th>Mobile</th>  
                 <th>Address</th>  
-                <th>Date of Birth</th>  
+                <th>Date of Birth</th>
+                <th>Action</th>
               </tr>  
         </thead>  
         <tbody>  
@@ -19,7 +20,14 @@
             <td>{{ users.lastName }}</td>  
             <td>{{ users.mobile }}</td>  
             <td>{{ users.address }}</td>  
-            <td>{{ users.dob }}</td>  
+            <td>{{ users.dob }}</td>
+            <td class="pl-0">
+              <button type="button" class="btn btn-light p-0" title="Edit" data-target="" data-backdrop="static"><i class="fa fa-edit " style="color:blue"></i></button>&nbsp;
+
+              <button type="button" class="btn btn-light p-0" title="Delete"><i class="fa fa-trash" style="color:red;"></i></button>&nbsp;
+
+              <button type="button" class="btn btn-light p-0" title="Print"><i class="fa fa-print" style="color:black;"></i></button>
+          </td>
           </tr>  
         </tbody>
         <tfoot class="mt-3">
