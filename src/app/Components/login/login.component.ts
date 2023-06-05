@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/Services/auth.service';
+import swal from 'sweetalert2'; 
 
 @Component({
   selector: 'app-login',
@@ -42,7 +43,8 @@ export class LoginComponent implements OnInit {
       }
       else{
         this.isUserValid = true;
-        //alert('Login Successful');
+       // swal.fire(res);
+        alert('Login Successful');
         this.router.navigateByUrl('home')
       }
     })
