@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
       else{
         this.isUserValid = true;
        // swal.fire(res);
-        alert('Login Successful');
+       // alert('Login Successful');
         this.router.navigateByUrl('home')
       }
     })
